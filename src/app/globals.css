@@ -1,0 +1,102 @@
+/* =======================
+   VARIABLES GLOBALES
+======================= */
+
+:root {
+  --background: #f7f4ef;
+  --foreground: #171717;
+
+  --font-size-base: 16px;
+  --line-height-base: 1.6;
+}
+
+/* =======================
+   RESET + BASE
+======================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+html {
+  font-size: var(--font-size-base);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--background);
+  color: var(--foreground);
+
+  font-family: var(--font-content), Arial, Helvetica, sans-serif;
+  line-height: var(--line-height-base);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =======================
+   ELEMENTOS BASE
+======================= */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* =======================
+   TIPOGRAFÍA
+======================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title), var(--font-content), sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* =======================
+   DARK MODE (si el sistema lo pide)
+======================= */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #f7f4ef;
+    --foreground: #171717;
+  }
+
+  html {
+    color-scheme: light;
+  }
+}
