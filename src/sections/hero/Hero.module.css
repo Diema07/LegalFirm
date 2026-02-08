@@ -1,5 +1,6 @@
 .hero {
-  position: relative;;
+  position: relative;
+  padding-top: 63px; /* espacio fijo para el navbar */
 }
 
 .imageWrapper {
@@ -10,7 +11,6 @@
   margin: 0 auto;
   height: 720px;
   overflow: hidden;
-
 }
 
 .image {

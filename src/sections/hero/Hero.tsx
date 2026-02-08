@@ -12,15 +12,11 @@ const HERO_IMAGES: Record<string, string> = {
 
 export default function Hero() {
   const pathname = usePathname();
-
   const image = HERO_IMAGES[pathname] || "/images/TopHome.webp";
 
   return (
     <section className={styles.hero}>
-      <div
-        className={styles.imageWrapper}
-        style={{ marginTop: "calc(var(--menu-offset) * -1)" }}
-      >
+      <div className={styles.imageWrapper}>
         <Image
           src={image}
           alt="Hero background"

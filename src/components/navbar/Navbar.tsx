@@ -1,13 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { forwardRef } from "react";
 import styles from "./Navbar.module.css";
 
-const Navbar = forwardRef<HTMLElement>(function Navbar(_, ref) {
+export default function Navbar() {
   return (
     <header className={styles.header}>
-      <nav ref={ref} className={styles.nav}>
-        {/* Logo */}
+      <nav className={styles.nav}>
         <Link href="/" className={styles.logoWrapper}>
           <Image
             src="/images/LogoLegalFirmBlack.svg"
@@ -19,7 +17,6 @@ const Navbar = forwardRef<HTMLElement>(function Navbar(_, ref) {
           />
         </Link>
 
-        {/* Links */}
         <ul className={styles.menu}>
           <li>
             <Link href="#about" className={styles.link}>
@@ -40,6 +37,4 @@ const Navbar = forwardRef<HTMLElement>(function Navbar(_, ref) {
       </nav>
     </header>
   );
-});
-
-export default Navbar;
+}

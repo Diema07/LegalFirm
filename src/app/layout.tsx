@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import ClientLayout from "@/components/layout/ClientLayout";
 import localFont from "next/font/local";
+import Navbar from "@/components/navbar/Navbar";
 
 /* =======================
    FUENTES LOCALES
@@ -72,8 +72,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={`${FontTitle.variable} ${FontContent.variable} antialiased`}>
-        <ClientLayout>{children}</ClientLayout>
+      <body
+        className={`${FontTitle.variable} ${FontContent.variable} antialiased`}
+      >
+        <Navbar />
+        {children}
       </body>
     </html>
   );
