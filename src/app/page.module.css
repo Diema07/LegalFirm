@@ -9,31 +9,38 @@
 /* 👉 ESTE es el margen tipo navbar */
 .aboutContainer {
   width: 60vw;
-  max-width: 900px;
-  min-height: 320px;
+  max-width: 1000px;
+  min-height: 420px;
 
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  grid-template-rows: 1fr;   /* 👈 IMPORTANTE */
-  gap: 3rem;
+  grid-template-rows: 1fr;
+  gap: 0; /* 👈 quitamos gap para que la imagen pegue */
 
   background-color: #012e63;
   border-radius: 30px;
-  padding: 2rem;
+
+  /* quitamos padding global */
+  padding: 0;
 
   margin-left: auto;
   margin-right: calc((100vw - min(90vw, 1800px)) / 2);
 
   align-items: stretch;
+  overflow: hidden; /* 👈 para que la curva no se salga */
 }
 
+/* 👉 padding SOLO para el texto */
 .aboutContent {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
   height: 100%;
+
+  padding: 2rem 3rem;
 }
 
+/* --- texto --- */
 .aboutTitle {
   font-family: var(--font-title);
   font-size: clamp(2rem, 4vw, 2.6rem);
@@ -49,16 +56,38 @@
   text-align: left;
 }
 
+/* --- imagen --- */
 .aboutImage {
   position: relative;
   width: 100%;
-  height: 100%;      
-  border-radius: 20px;
-  overflow: hidden;
+  height: 100%;
+  overflow: visible;
+  filter: drop-shadow(-20px 0 20px rgba(0,0,0,.50));
 }
 
+/* 👉 borde curvo real */
+.aboutImage::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: #001a3a;
+  clip-path: ellipse(100% 120% at 100% 50%);
+  
+  z-index: 1;
+}
+
+/* 👉 imagen */
 .image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: center 87%;
+  
+  z-index: 2;
+
+  clip-path: ellipse(100% 120% at 100% 50%);
 }
 
 /* Responsive */
@@ -69,5 +98,10 @@
 
   .aboutImage {
     height: 260px;
+    clip-path: ellipse(120% 85% at 50% 0%);
+  }
+
+  .aboutContent {
+    padding: 2rem;
   }
 }

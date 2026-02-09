@@ -30,14 +30,17 @@
   left: 1.5rem;
   top: 50%;
   transform: translateY(-50%);
-  width: 72px;
-  height: 72px;
+  width: 110px;
+  height: 110px;
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: auto;
 }
 
 .logo {
+  width: 75% !important;
+  height: 75% !important;
   object-fit: contain;
 }
 
